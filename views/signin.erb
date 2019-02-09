@@ -1,13 +1,12 @@
+<form action="/signin" method="post">
 
-    <form action="/signin" method="post">
+  <div class="mb">
+    <label for="email">Email:</label>
+    <div><input class="container_length" type="text" name="email"></div>
 
-      <div style = "margin-bottom: 1em">
-      <label for="email">Email:</label>
-      <div><input type="text" name="email"></div>
+    <label for="password">Password:</label>
+    <div><input class="container_length" type="password" name="password"></div>
+  </div>
 
-      <label for="password">Password:</label>
-      <div><input type="password" name="password"></div>
-      </div>
-
-      <input class = "btn btn-dark" type="submit" value="Sign in">
-    </form>
+  <input class="btn btn-dark container_length" type="submit" value="Sign in">
+</form>

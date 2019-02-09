@@ -19,7 +19,6 @@ RSpec.feature 'User Authentication' do
     scenario 'A signed in user can log out' do
       sign_in
       click_button 'Log out'
-
       expect(page.current_path).to eq '/'
       expect(page).to have_content 'Sign up'
       expect(page).to have_content 'Sign in'
@@ -58,6 +57,7 @@ RSpec.feature 'User Authentication' do
       expect(page).to have_content 'Best flat/tavern for getting pissed'
     end
   end
+
   context 'Book page (view available venues)' do
     before do
       sign_up
@@ -71,7 +71,6 @@ RSpec.feature 'User Authentication' do
       click_button 'Add'
       click_button 'Log out'
     end
-
     scenario 'User can see venues available on their search dates and is able to send a booking request' do
       visit '/'
       click_on 'Sign up'

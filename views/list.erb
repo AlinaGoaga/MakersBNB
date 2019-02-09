@@ -1,25 +1,28 @@
- <h2> Add a new property! </h2>
+<h2> List a new property </h2>
 
 <form action="/profile" method="post">
 
-      <label for="name">Name:</label>
-      <div><input type="text" name="name"></div>
+      <div class="mb"
+        <label for="name">Name:</label>
+        <div><input class="container_length" type="text" name="name"></div>
 
-      <label for="address">Address:</label>
-      <div><input type="text" name="address"></div>
+        <label for="address">Address:</label>
+        <div><input class="container_length" type="text" name="address"></div>
 
-      <label for="ppn">Price per night:</label>
-      <div><input type="text" name="ppn"></div>
+        <label for="ppn">Price per night:</label>
+        <div><input class="container_length" type="text" name="ppn"></div>
 
-      <label for="description">Description:</label>
-      <div><input type="text" name="description"></div>
+        <label for="description">Description:</label>
+        <div><input class="container_length" type="text" name="description"></div>
+      </div>
 
-      <label for="start_date">Available from:</label>
-      <div><input type="date" name="start_date"></div>
+      <div>
+        <label for="start_date">Available from</label>
+        <input style="width: 38.5%" type="date" name="start_date">
+        <label for="end_date">until</label>
+        <input style="width: 38.5%" type="date" name="end_date">
+      </div>
 
-      <label for="end_date">Available until:</label>
-      <div><input type="date" name="end_date"></div>
-
-      <input style = "margin-top: 1em" class="btn btn-secondary" type="submit" value="Add">
+      <input style = "margin-top: 1em" class="btn btn-secondary container_length" type="submit" value="Add">
 
 </form>

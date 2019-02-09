@@ -1,41 +1,29 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-<body>
+<h2 class="mb"> Please insert the dates you're interested in! </h2>
 
-  <h2 style = "margin-bottom: 1.5em"> Please insert the dates you're interested in, to see a list of available properties! </h2>
-
-  <div>
+<div>
   <form action="/book" method="get">
     <label for="start_date">Start date:</label>
-      <div><input type="date" name="start_date"></div>
+    <input class="partial_container_length" type="date" name="start_date">
+    <label for="end_date">End date:</label>
+    <input class="partial_container_length" type="date" name="end_date">
 
-      <label for="end_date">End date:</label>
-      <div><input type="date" name="end_date"></div>
-
-      <div><input style = "margin-top: 1em" class="btn btn-secondary" type="submit" value="Search"></div>
+    <input style="width:100%" class="btn btn-secondary" type="submit" value="Search">
   </form>
-  </div>
+</div>
 
-  <div style = "margin-top: 3em">
-    <% @venues.each do |venue| %>
-    <dl>
-      <dt><%= venue.name %></dt>
-      <dd><%= venue.address %></dd>
-      <dd>Price per night: £<%= venue.ppn %></dd>
-      <dd><%= venue.description %></dd>
-      <dd><% venue.availabilities.each do |availability| %></dd>
-      <dd>Available from: <%= availability.start_date.strftime("%d/%m/%Y") %></dd>
-      <dd>Available until: <%= availability.end_date.strftime("%d/%m/%Y") %></dd>
+<div style = "margin-top: 3em">
+  <% @venues.each do |venue| %>
+  <dl>
+    <dt><%= venue.name %></dt>
+    <dd><%= venue.address %></dd>
+    <dd>Price per night: £<%= venue.ppn %></dd>
+    <dd><%= venue.description %></dd>
+    <dd><% venue.availabilities.each do |availability| %></dd>
+    <dd>Available from <%= availability.start_date.strftime("%d/%m/%Y") %>
+      until <%= availability.end_date.strftime("%d/%m/%Y") %></dd>
       <% end %>
-      <dd><a style = "margin-bottom: 1.5em" class="btn btn-secondary" href=<%="/book/request"%>> Book this property </a>
+      <dd><a class="btn btn-secondary container_length mb" href=<%="/book/request"%>> Book this property </a>
       </dd>
     </dl>
     <% end %>
   </div>
-
-</body>
-</html>
